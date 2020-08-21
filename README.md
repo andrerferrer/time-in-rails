@@ -13,6 +13,7 @@ This is a demo to show-case how to implement an easy date picker in rails using 
 ## What needs to be done?
 
 - have a model with the date / date-time
+
 eg.: `rails g model booking restaurant:references booked_at:datetime`
 
 - create the form:
