@@ -9,8 +9,9 @@ address = {
 [
   { name: "Amareleen", **address },
   { name: "Verdeen", **address }
-].each(&Restaurant.method(:new))
+].each(&Restaurant.method(:create!))
 
+Booking.create! booked_at: DateTime.tomorrow.noon, restaurant: Restaurant.last
 
 puts "Let's drink a beer"
 puts %{
