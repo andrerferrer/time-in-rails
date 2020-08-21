@@ -10,16 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_29_221952) do
+ActiveRecord::Schema.define(version: 2020_08_21_125254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "restaurant_id", null: false
+    t.datetime "booked_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_bookings_on_restaurant_id"
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "street"
+    t.string "city"
+    t.string "country"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -30,5 +43,6 @@ ActiveRecord::Schema.define(version: 2020_05_29_221952) do
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
   end
 
+  add_foreign_key "bookings", "restaurants"
   add_foreign_key "reviews", "restaurants"
 end
