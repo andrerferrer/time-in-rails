@@ -17,6 +17,7 @@ Booking.create! booked_at: DateTime.tomorrow.noon, restaurant: Restaurant.last
 
 puts "Let's drink a beer"
 puts %{
+  
   .~~~~.
   i====i_
   |cccc|_)
