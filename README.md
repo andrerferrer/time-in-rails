@@ -4,6 +4,8 @@ This is a demo to show-case how to work with time (_latu sensu_) in `Rails`.
 
 [You can also check my other demos](https://github.com/andrerferrer/dedemos/blob/master/README.md#ded%C3%A9mos).
 
+*This demo is unfinished*
+
 ## TLDR
 
 ## What are we talking about?
